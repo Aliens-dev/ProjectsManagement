@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Policies\ProjectPolicy;
 use App\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class ProjectController extends Controller
 {
@@ -40,23 +42,23 @@ class ProjectController extends Controller
         $attributes = $request->validate([
             'title' => 'required',
             'description' => 'required',
+            'notes' => ''
         ]);
 
-        auth()->user()->projects()->create($attributes);
-        return redirect('/projects');
+        $project = auth()->user()->projects()->create($attributes);
+        return redirect($project->path());
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Project  $project
+     * @param  \App\Project $project
      * @return \Illuminate\Http\Response
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function show(Project $project)
     {
-        if(auth()->user()->isNot($project->user)) {
-            abort(403);
-        }
+        $this->authorize('show',$project);
         return view('projects.show',compact('project'));
     }
 
@@ -74,13 +76,21 @@ class ProjectController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Project  $project
-     * @return \Illuminate\Http\Response
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\Project $project
+     * @return void
+     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function update(Request $request, Project $project)
     {
-        //
+
+        $this->authorize('update', $project);
+
+        $request->validate([
+            'notes' => ''
+        ]);
+
+        $project->update(['notes' => $request->notes]);
     }
 
     /**

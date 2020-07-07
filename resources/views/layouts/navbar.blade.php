@@ -1,31 +1,27 @@
-
-
-
-<nav class="navbar navbar-expand-lg bg-white mb-5">
-    <div class="container">
-        <a class="navbar-brand" href="{{ route('home.index') }}">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{ route('projects.index') }}">My Projects<span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Projects
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('projects.create') }}">Add Project</a>
-                    </div>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+<nav class="navbar">
+    <div class="nav-brand">
+        <img src="{{ asset("/svg/feather.png") }}" alt="feather">
+        <span>
+            <a href="{{ route('home.index') }}">
+                birdboard
+            </a>
+        </span>
+    </div>
+    <div class="nav-left">
+        <div>
+            <a class="nav-link" href="{{ route('projects.index') }}" >My projects</a>
         </div>
+        <div>
+            <a class="nav-link" href="{{ route('projects.create') }}" >Add Project</a>
+        </div>
+    </div>
+    <div class="flex-grow-1"></div>
+    <div class="nav-right">
+        <span class="profile-img">
+            <img src="{{ asset("./img/me.jpg") }}"/>
+        </span>
+        <span class="profile-name">
+            Nabil Merazga
+        </span>
     </div>
 </nav>

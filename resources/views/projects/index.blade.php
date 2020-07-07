@@ -1,20 +1,18 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
 
-    @section('content')
-
-       <div class="projects">
-           <div class="container">
-               <ul class="list-group">
-                   @foreach($projects as $project)
-                       <li class="list-group-item mb-2 border-1">
-                           <a href="{{ $project->path() }}" >
-                               {{ $project->title }}
-                           </a>
-                       </li>
-                   @endforeach
-
-               </ul>
-           </div>
-       </div>
+    @section('dashboard-content')
+        <div class="nav">
+            <span>My Projects</span>
+            <a href="{{ route('projects.create') }}" class="add-project">Add Project</a>
+        </div>
+        <div class="my-projects">
+            @foreach($projects as $project)
+                @include('layouts.components.card', [
+                    'title' => $project->title ,
+                    'desc'  => $project->description ,
+                    'link'  => $project->path()
+                    ])
+            @endforeach
+        </div>
 
     @endsection

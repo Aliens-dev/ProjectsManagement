@@ -8,6 +8,7 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,600,700" rel="stylesheet">
         <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     </head>
     <body>

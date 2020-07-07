@@ -1,10 +1,10 @@
 
-@extends('layouts.app')
+@extends('layouts.dashboard')
 
-    @section('content')
+    @section('dashboard-content')
 
-        <div class="container">
-            <h1>Create a Project</h1>
+        <h1>Create a Project</h1>
+        <div class="my-card p-5">
             <form method="post" action="{{ route('projects.store') }}">
                 @csrf
                 <div class="form-group">
@@ -16,10 +16,9 @@
                     <textarea name="description" id="description" placeholder="Title" class="form-control"></textarea>
                 </div>
                 <div>
-                    <input name="submit" value="Add Project" type="submit">
+                    <input name="submit" value="Add Project" class="my-btn" type="submit">
                 </div>
             </form>
         </div>
-
-
+        
         @endsection
