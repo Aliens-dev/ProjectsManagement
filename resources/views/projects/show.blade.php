@@ -3,7 +3,12 @@
 
     @section('dashboard-content')
         <div class="nav">
-            <span>My Tasks</span>
+            <span>
+                <span><a href="{{ route('projects.index') }}">My projects</a></span>
+                /
+                <span>My Tasks</span>
+            </span>
+            <a href="{{ route('projects.edit',$project->id) }}" class="my-btn">Edit Project</a>
         </div>
         <div class="single-project">
             <div class="tasks">
@@ -40,8 +45,9 @@
                     </div>
                     <form action="{{ route('projects.update' , $project->id) }}" method="POST">
                         @csrf
+                        @method('patch')
                         <textarea name="notes" class="form-control mt-3 my-shadow" rows="4">{{ $project->notes }}</textarea>
-                        <button class="my-btn mt-2 mb-2">Add Note</button>
+                        <button class="my-btn mt-2 mb-2">Save</button>
                     </form>
                 </div>
             </div>

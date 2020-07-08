@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Policies\ProjectPolicy;
 use App\Project;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 
@@ -70,7 +71,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        //
+        return view('projects.edit', compact('project'));
     }
 
     /**
@@ -78,7 +79,7 @@ class ProjectController extends Controller
      *
      * @param  \Illuminate\Http\Request $request
      * @param  \App\Project $project
-     * @return void
+     * @return RedirectResponse
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function update(Request $request, Project $project)
@@ -86,11 +87,14 @@ class ProjectController extends Controller
 
         $this->authorize('update', $project);
 
-        $request->validate([
-            'notes' => ''
+        $fields = $request->validate([
+            'notes' => 'nullable',
+            'title' => 'sometimes|required',
+            'description' => 'sometimes|required',
         ]);
 
-        $project->update(['notes' => $request->notes]);
+        $project->update($fields);
+        return redirect($project->path());
     }
 
     /**

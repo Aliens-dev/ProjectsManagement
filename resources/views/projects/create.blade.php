@@ -3,7 +3,13 @@
 
     @section('dashboard-content')
 
-        <h1>Create a Project</h1>
+        <div class="nav">
+            <span>
+                    <span><a href="{{ route('projects.index') }}">My projects</a></span>
+                    /
+                    <span>Add Project</span>
+            </span>
+        </div>
         <div class="my-card p-5">
             <form method="post" action="{{ route('projects.store') }}">
                 @csrf

@@ -3,7 +3,7 @@
     @section('dashboard-content')
         <div class="nav">
             <span>My Projects</span>
-            <a href="{{ route('projects.create') }}" class="add-project">Add Project</a>
+            <a href="{{ route('projects.create') }}" class="my-btn">Add Project</a>
         </div>
         <div class="my-projects">
             @foreach($projects as $project)
