@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateProjectRequest;
 use App\Policies\ProjectPolicy;
 use App\Project;
 use Illuminate\Http\RedirectResponse;
@@ -82,18 +83,9 @@ class ProjectController extends Controller
      * @return RedirectResponse
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
-    public function update(Request $request, Project $project)
+    public function update(UpdateProjectRequest $request, Project $project)
     {
-
-        $this->authorize('update', $project);
-
-        $fields = $request->validate([
-            'notes' => 'nullable',
-            'title' => 'sometimes|required',
-            'description' => 'sometimes|required',
-        ]);
-
-        $project->update($fields);
+        $project->update($request->validated());
         return redirect($project->path());
     }
 

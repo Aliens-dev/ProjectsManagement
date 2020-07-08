@@ -18,6 +18,7 @@ class ProjectFactory
 
     protected $count = 0;
     protected $user = null;
+
     public function withTasks($count)
     {
         $this->count = $count;
