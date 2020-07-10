@@ -10928,6 +10928,38 @@ a.text-dark:focus {
   }
 }
 
+.my-shadow {
+  box-shadow: 2px 1px 3px #EEE, 2px 1px 2px #EEE;
+}
+
+.my-btn,
+.nav .add-project {
+  background-color: #47CDFF;
+  color: #FFF;
+  padding: 8px 18px;
+  border: 1px solid #47CDFF;
+  border-radius: 5px;
+}
+
+.my-btn:focus,
+.nav .add-project:focus {
+  outline: none;
+  border: 1px solid #47CDFA;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  margin-bottom: 10px;
+}
+
+.nav span {
+  color: #9B9B9B;
+  font-size: 16px;
+}
+
 .navbar {
   background-color: #FFF;
   max-height: 60px;
@@ -10997,25 +11029,11 @@ a.text-dark:focus {
 
 .projects .projects-container {
   display: grid;
-  grid-template-columns: 1fr 380px;
+  background-color: #F5F6F9;
 }
 
 .projects .projects-container .projects-view {
-  background-color: #F5F6F9;
-  padding: 20px 40px;
-}
-
-.projects .projects-container .projects-view .nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 0;
-  margin-bottom: 10px;
-}
-
-.projects .projects-container .projects-view .nav span {
-  color: #9B9B9B;
-  font-size: 16px;
+  display: grid;
 }
 
 .projects .projects-container .projects-view .my-projects {
@@ -11025,6 +11043,28 @@ a.text-dark:focus {
   grid-auto-rows: 200px;
   grid-column-gap: 30px;
   grid-row-gap: 30px;
+}
+
+.projects .projects-container .projects-view .projects-page {
+  padding: 20px 40px;
+}
+
+.projects .projects-container .projects-view .create-project {
+  padding: 20px 40px;
+}
+
+.projects .projects-container .projects-view .edit-project {
+  padding: 20px 40px;
+}
+
+.projects .projects-container .projects-view .project-page {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  grid-column-gap: 20px;
+}
+
+.projects .projects-container .projects-view .project-page .project-info {
+  padding: 20px 20px 0 40px;
 }
 
 .projects .projects-container .latest-updates {
@@ -11086,30 +11126,19 @@ a.text-dark:focus {
   font-family: Roboto;
 }
 
+.latest-updates {
+  padding: 20px 40px;
+}
+
+.latest-updates .nav span {
+  font-size: 20px;
+}
+
 a {
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: none;
-}
-
-.my-shadow {
-  box-shadow: 2px 1px 3px #EEE, 2px 1px 2px #EEE;
-}
-
-.my-btn,
-.projects .projects-container .projects-view .nav .add-project {
-  background-color: #47CDFF;
-  color: #FFF;
-  padding: 8px 18px;
-  border: 1px solid #47CDFF;
-  border-radius: 5px;
-}
-
-.my-btn:focus,
-.projects .projects-container .projects-view .nav .add-project:focus {
-  outline: none;
-  border: 1px solid #47CDFA;
 }
 

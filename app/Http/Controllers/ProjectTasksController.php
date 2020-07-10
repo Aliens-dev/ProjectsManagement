@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpdateProjectRequest;
 use App\Project;
 use App\Task;
 use Illuminate\Http\RedirectResponse;
@@ -78,15 +79,16 @@ class ProjectTasksController extends Controller
      * @return RedirectResponse
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
-    public function update(Request $request, Project $project, Task $task)
+    public function update(UpdateProjectRequest $request, Project $project, Task $task)
     {
-        $this->authorize('update', $project);
-        $request->validate(['body' => 'required']);
 
-        $task->update(['body' => $request->body]);
-        if($request->has('completed')) {
-            $task->complete();
-        }
+        $attributes = $request->validate(['body' => 'required']);
+
+        $task->update($attributes);
+
+        $method = $request->completed ? 'complete' : 'incomplete';
+
+        $task->$method();
 
         return redirect($project->path());
     }

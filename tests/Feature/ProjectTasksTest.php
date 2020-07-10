@@ -67,7 +67,7 @@ class ProjectTasksTest extends TestCase
     
     /** @test */
 
-    public function a_task_can_be_updated()
+    public function a_task_can_be_completed()
     {
         $project = ProjectFactory::withTasks(1)->create();
 
@@ -79,7 +79,22 @@ class ProjectTasksTest extends TestCase
         ])->assertRedirect($project->path());
 
         $this->assertDatabaseHas('tasks', ['body'=> 'changed', 'completed'=> true]);
+    }
+    /** @test */
 
+    public function a_task_can_be_uncompleted()
+    {
+        $this->withoutExceptionHandling();
+        
+        $project = ProjectFactory::withTasks(1)->create();
 
+        //$task = $project->addTask('test task');
+
+        $this->actingAs($project->user)->patch($project->tasks->first()->path(), [
+            'body' => 'changed',
+            'completed' => false,
+        ])->assertRedirect($project->path());
+
+        $this->assertDatabaseHas('tasks', ['body'=> 'changed', 'completed'=> false]);
     }
 }

@@ -52,4 +52,15 @@ class TaskTest extends TestCase
 
         $this->assertTrue($task->completed);
     }
+    /** @test */
+
+    public function it_can_be_uncompleted()
+    {
+        $task = factory('App\Task')->create(['completed' => true]);
+
+        $this->assertTrue($task->completed);
+        $task->incomplete();
+
+        $this->assertFalse($task->completed);
+    }
 }

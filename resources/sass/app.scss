@@ -11,6 +11,37 @@
 
 $greyText : #9B9B9B;
 
+
+.my-shadow {
+    box-shadow: 2px 1px 3px #EEE, 2px 1px 2px #EEE;
+}
+
+.my-btn {
+    background-color:#47CDFF;
+    color:#FFF;
+    padding: 8px 18px;
+    border: 1px solid #47CDFF;
+    border-radius: 5px;
+    &:focus {
+        outline:none;
+        border:1px solid #47CDFA;
+    }
+}
+.nav {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    span {
+        color: $greyText;
+        font-size: 16px;
+    }
+    .add-project {
+        @extend .my-btn
+    }
+}
+
 .navbar {
     background-color :#FFF;
     max-height: 60px;
@@ -70,24 +101,9 @@ $greyText : #9B9B9B;
     font-family: sans-serif;
     .projects-container {
         display:grid;
-        grid-template-columns: 1fr 380px;
+        background-color: #F5F6F9;
         .projects-view {
-            background-color: #F5F6F9;
-            padding: 20px 40px;
-            .nav {
-                display:flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 10px 0;
-                margin-bottom: 10px;
-                span {
-                    color: $greyText;
-                    font-size: 16px;
-                }
-                .add-project {
-                    @extend .my-btn
-                }
-            }
+            display:grid;
             .my-projects {
                 display:grid;
                 grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
@@ -95,7 +111,23 @@ $greyText : #9B9B9B;
                 grid-auto-rows: 200px;
                 grid-column-gap: 30px;
                 grid-row-gap: 30px;
-
+            }
+            .projects-page {
+                padding: 20px 40px;
+            }
+            .create-project{
+                padding: 20px 40px;
+            }
+            .edit-project {
+                padding: 20px 40px;
+            }
+            .project-page {
+                display:grid;
+                grid-template-columns: 1fr 350px;
+                grid-column-gap: 20px;
+                .project-info {
+                    padding: 20px 20px 0 40px;
+                }
             }
         }
         .latest-updates {
@@ -153,7 +185,14 @@ $greyText : #9B9B9B;
         font-family: Roboto;
     }
 }
-
+.latest-updates {
+    padding: 20px 40px;
+    .nav {
+        span {
+            font-size:20px;
+        }
+    }
+}
 a {
     text-decoration: none;
     &:hover {
@@ -161,18 +200,3 @@ a {
     }
 }
 
-.my-shadow {
-    box-shadow: 2px 1px 3px #EEE, 2px 1px 2px #EEE;
-}
-
-.my-btn {
-    background-color:#47CDFF;
-    color:#FFF;
-    padding: 8px 18px;
-    border: 1px solid #47CDFF;
-    border-radius: 5px;
-    &:focus {
-        outline:none;
-        border:1px solid #47CDFA;
-    }
-}
