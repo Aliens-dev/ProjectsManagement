@@ -1,6 +1,4 @@
 @extends('layouts.dashboard')
-
-
     @section('dashboard-content')
         <div class="project-page">
             <div class="project-info">
@@ -13,11 +11,11 @@
 
                     <div>
                         @foreach($project->members as $member)
-                            <img src="https://gravatar.com/avatar/{{ md5($member->email) }}?s=40" alt="{{ $member }}">
+                            <img class="rounded-circle" src="{{ gravatar($member->email) }}?s=40" alt="{{ $member }}">
                         @endforeach
+                        <a href="{{ route('projects.edit',$project->id) }}" class="my-btn ml-2">Edit Project</a>
                     </div>
 
-                    <a href="{{ route('projects.edit',$project->id) }}" class="my-btn">Edit Project</a>
                 </div>
                 <div class="single-project">
                     <div class="tasks">
@@ -62,6 +60,32 @@
                     </div>
                     <div class="project">
                         @include('layouts.components.card', ['title' => $project->title, 'desc'=> $project->description])
+                        @can('invite',$project)
+                            <div class="my-card mt-3">
+                                <div class="my-card-title">
+                                    Invite other users
+                                </div>
+                                <form method="POST" class="w-100" action="{{ $project->path() . "/invitations" }}">
+                                    @csrf
+                                    <div class="my-card-desc d-flex flex-grow-1">
+                                        <input name="email" class="form-control" placeholder="Example@example.com">
+                                    </div>
+                                    <div class="d-flex justify-content-end">
+                                        <button class="btn btn-primary mr-2 mt-2">invite</button>
+                                    </div>
+                                </form>
+                                @if($errors->any())
+                                    @foreach($errors->all() as $error)
+                                        <div class="alert alert-warning alert-dismissible fade show mt-2" role="alert">
+                                            {{ $error }}
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                    @endforeach
+                                @endif
+                            </div>
+                            @endcan
                     </div>
                 </div>
             </div>

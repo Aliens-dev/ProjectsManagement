@@ -11077,6 +11077,8 @@ a.text-dark:focus {
   border-radius: 8px;
   box-shadow: 2px 1px 3px #EEE, 2px 1px 2px #EEE;
   overflow: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .my-card .my-card-title {
@@ -11113,6 +11115,10 @@ a.text-dark:focus {
   color: #9B9B9B;
   font-family: Roboto;
   font-size: 16px;
+}
+
+.my-card .btn {
+  padding: 4px 5px;
 }
 
 .single-project {

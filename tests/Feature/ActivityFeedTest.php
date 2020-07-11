@@ -34,20 +34,19 @@ class ActivityFeedTest extends TestCase
     {
         $project = ProjectFactory::create();
         $originalTitle = $project->title;
-        $this->actingAs($project->user)->patch($project->path(), ['title' => 'new Title'])->assertRedirect($project->path());
+        $attributes = ['title' => 'new Title'];
+        $this->actingAs($project->user)->patch($project->path(), $attributes)->assertRedirect($project->path());
 
         $this->assertCount(2,$project->activity);
 
         $activity = $project->activity->last();
-
         $expected = [
             'before' => [
                 'title' => $originalTitle
             ],
-            'after' => [
-                'title' => 'new Title',
-            ]
+            'after' => $attributes
         ];
+
         $this->assertEquals($expected, $activity->changes);
     }
     
