@@ -10,6 +10,13 @@
                         /
                         <span>My Tasks</span>
                     </span>
+
+                    <div>
+                        @foreach($project->members as $member)
+                            <img src="https://gravatar.com/avatar/{{ md5($member->email) }}?s=40" alt="{{ $member }}">
+                        @endforeach
+                    </div>
+
                     <a href="{{ route('projects.edit',$project->id) }}" class="my-btn">Edit Project</a>
                 </div>
                 <div class="single-project">

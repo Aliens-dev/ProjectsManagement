@@ -35,6 +35,16 @@ class Project extends Model
         return $this->hasMany('App\Activity')->latest();
     }
 
+    public function invite(User $user)
+    {
+        return $this->members()->attach($user);
+    }
+
+    public function members()
+    {
+        return $this->belongsToMany(User::class,'project_members')->withTimestamps();
+    }
+
     //    public function recordActivity($type) {
 ////        Activity::create([
 ////            'project_id' => $this->id,

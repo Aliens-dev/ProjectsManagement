@@ -39,6 +39,25 @@ class User extends Authenticatable
 
 
     public function projects() {
-        return $this->hasMany('App\Project', 'owner_id')->latest('updated_at');
+        return $this->hasMany(Project::class, 'owner_id')->latest('updated_at');
+    }
+
+    public function invitedProjects(){
+        return $this->belongsToMany(Project::class , 'project_members');
+    }
+
+    public function accessibleProjects()
+    {
+        return $this->projects->merge($this->invitedProjects);
+
+        // Or
+//        $projects = Project::all();
+//        $projectArray = auth()->user()->projects;
+//        foreach ($projects as $project) {
+//            if($project->members->contains(auth()->user())) {
+//                $projectArray->push($project);
+//            }
+//        }
+//        return $projectArray;
     }
 }

@@ -12,9 +12,7 @@ class Task extends Model
 
     protected static $activityEvents = ['created', 'deleted'];
 
-    protected $casts= [
-        "completed" => "boolean"
-    ];
+    protected $casts= ["completed" => "boolean"];
 
     protected $touches = ['project'];
 
@@ -35,7 +33,10 @@ class Task extends Model
     public function path() {
         return $this->project->path() . '/tasks/' . $this->id;
     }
-//
+
+
+
+
 //    public function recordActivity($description) {
 //        $this->activity()->create([
 //            'description' => $description,
@@ -43,8 +44,6 @@ class Task extends Model
 //        ]);
 //    }
 
-    public function activity() {
-        return $this->morphMany(Activity::class,'subject');
-    }
+
 
 }

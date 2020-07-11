@@ -116,6 +116,72 @@ class ManageProjectTest extends TestCase
 
     /** @test */
 
+    public function a_guest_cannot_delete_any_project()
+    {
+        $project = ProjectFactory::create();
+
+        $response = $this->delete($project->path());
+
+        $response->assertRedirect('login');
+
+        $this->assertDatabaseHas('projects', ['id' => $project->id]);
+
+        $this->assertNotNull($project->fresh());
+
+    }
+    
+    /** @test */
+
+    public function a_user_can_see_all_projects_they_have_been_invited_to()
+    {
+        $this->withoutExceptionHandling();
+
+        $user = $this->signIn();
+        $project = ProjectFactory::create();
+
+        $project->invite($user);
+
+        $this->get('/projects')->assertSee($project->title);
+
+
+    }
+    /** @test */
+
+    public function a_user_can_delete_their_projects()
+    {
+        $this->withoutExceptionHandling();
+        $project = ProjectFactory::create();
+
+        $response = $this->actingAs($project->user)->delete($project->path());
+
+        $response->assertRedirect('/projects');
+
+        $this->assertDatabaseMissing('projects', ['id' => $project->id]);
+
+        $this->assertNull($project->fresh());
+
+    }
+
+    /** @test */
+
+    public function a_user_cannot_delete_projects_of_others()
+    {
+
+        $user = $this->signIn();
+        $project = ProjectFactory::create();
+
+        $response = $this->actingAs($user)->delete($project->path());
+
+        $response->assertStatus(403);
+
+        $this->assertDatabaseHas('projects', ['id' => $project->id]);
+
+        $this->assertNotNull($project->fresh());
+
+    }
+
+    /** @test */
+
     public function an_authenticated_user_cannot_view_projects_of_others()
     {
 

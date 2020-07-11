@@ -73,11 +73,10 @@ class ProjectTasksController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param UpdateProjectRequest $request
      * @param Project $project
      * @param Task $task
      * @return RedirectResponse
-     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function update(UpdateProjectRequest $request, Project $project, Task $task)
     {
