@@ -3,8 +3,8 @@
     @section('dashboard-content')
         <div class="projects-page">
             <div class="nav">
-                <span>My Projects</span>
-                <a href="{{ route('projects.create') }}" class="my-btn">Add Project</a>
+                <span>{{ __('My Projects') }}</span>
+                <a href="{{ route('projects.create') }}" class="my-btn">{{ __('Add Project') }}</a>
             </div>
             <div class="my-projects">
                 @foreach($projects as $project)

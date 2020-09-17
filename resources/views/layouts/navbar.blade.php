@@ -9,7 +9,7 @@
     </div>
     <div class="nav-left">
         <div>
-            <a class="nav-link" href="{{ route('projects.index') }}" >My projects</a>
+            <a class="nav-link" href="{{ route('projects.index') }}" >My Projects</a>
         </div>
         <div>
             <a class="nav-link" href="{{ route('projects.create') }}" >Add Project</a>
