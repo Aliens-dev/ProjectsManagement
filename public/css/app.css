@@ -11210,8 +11210,8 @@ a:hover {
 .home-page .container .desc p {
   padding: 10px 0;
   margin: 20px 0 30px;
-  color: #BDBDC7;
-  font-size: 18px;
+  color: #000;
+  font-size: 16px;
 }
 
 .home-page .container .controls {
@@ -11250,5 +11250,180 @@ a:hover {
 
 .home-page .container .controls .watch:hover {
   background-color: gainsboro;
+}
+
+.page {
+  padding: 50px 0;
+  background-color: #FFF;
+}
+
+.page .container .page-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 50px;
+  align-items: center;
+  padding: 10px 20px;
+  -webkit-animation: showPage 0.5s ease-in-out;
+          animation: showPage 0.5s ease-in-out;
+}
+
+.page .container .page-card .page-image {
+  width: 100%;
+  height: 100%;
+}
+
+.page .container .page-card .page-image img {
+  width: 100%;
+  height: 100%;
+}
+
+@-webkit-keyframes showPage {
+  from {
+    transform: translate(-1000px);
+  }
+
+  to {
+    transform: translate(0);
+  }
+}
+
+@keyframes showPage {
+  from {
+    transform: translate(-1000px);
+  }
+
+  to {
+    transform: translate(0);
+  }
+}
+
+.page .container .page-card .page-body {
+  width: 400px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.page .container .page-card .page-body .page-header {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  width: 100%;
+  margin-bottom: 20px;
+  font-family: Questrial;
+}
+
+.page .container .page-card .page-body .page-header h3 {
+  font-size: 25px;
+  font-weight: 900;
+  color: #34374D;
+}
+
+.page .container .page-card .page-body .page-header span {
+  font-size: 14px;
+  color: #72797f;
+}
+
+.page .container .page-card .page-body form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px 20px;
+}
+
+.page .container .page-card .page-body form .form-group {
+  width: 100%;
+  margin: 10px 0 20px;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  align-items: center;
+  border: 1px solid #1D68A7;
+  border-radius: 3px;
+}
+
+.page .container .page-card .page-body form .form-group:focus-within i {
+  color: #1D68A7;
+  transition: all 0.3s ease-in-out;
+}
+
+.page .container .page-card .page-body form .form-group i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+.page .container .page-card .page-body form .form-group input {
+  height: 50px;
+  flex-grow: 1;
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  color: #1D68A7 !important;
+}
+
+.page .container .page-card .page-body form .form-group input:focus {
+  outline: none;
+  background-color: #FFF !important;
+}
+
+.page .container .page-card .page-body form .form-buttons {
+  margin: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  font-family: Questrial;
+  align-items: center;
+}
+
+.page .container .page-card .page-body form .form-buttons button {
+  border: 1px solid #1D68A7;
+  background-color: #1D68A7;
+  color: #FFF;
+  border-radius: 100px;
+  padding: 10px 60px;
+}
+
+.page .container .page-card .page-body form .form-buttons a {
+  color: rgba(29, 104, 167, 0.6);
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+.page .container .page-card .page-body form .form-buttons a:hover {
+  color: #1d68a7;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.page .container .page-card .page-body form .remember-me {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.page .container .page-card .page-body form .remember-me input {
+  width: 20px;
+  height: 20px;
+}
+
+.page .container .page-card .page-body form .remember-me label {
+  margin: 0 20px;
+  color: rgba(29, 104, 167, 0.6);
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+.page .container .page-card .page-body form .remember-me label:hover {
+  cursor: pointer;
+  color: #1d68a7;
+  transition: all 0.3s ease-in-out;
+}
+
+input:-internal-autofill-selected {
+  background-color: none;
 }
 
