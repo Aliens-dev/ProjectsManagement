@@ -21,7 +21,7 @@
             <div class="nav-right">
                 <span class="profile-name dropdown">
                     <span id="login-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Nabil Merazga
+                        {{ auth()->user()->name }}
                     </span>
                     <div class="dropdown-menu" aria-labelledby="login-dropdown">
                         <a class="dropdown-item" href="#">Profile</a>

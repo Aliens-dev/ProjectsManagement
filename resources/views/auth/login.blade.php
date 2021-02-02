@@ -46,14 +46,14 @@
                                 @endif
                             </div>
                             @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                </span>
+                                <div class="alert alert-danger">
+                                    <strong>{{ $message }}</strong>
+                                </div>
                             @enderror
                             @error('password')
-                                <span class="invalid-feedback" role="alert">
+                                <div class="alert alert-danger">
                                     <strong>{{ $message }}</strong>
-                                </span>
+                                </div>
                             @enderror
                         </form>
                     </div>

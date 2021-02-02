@@ -92,8 +92,21 @@ $greyText : #9B9B9B;
             font-size:15px;
             font-weight: 600;
             margin-left: 10px;
-            font-family: Roboto;
+            font-family: 'Roboto';
             display:block;
+            .dropdown-menu {
+                width:180px;
+                border-radius: 0;
+                padding: 0;
+                top:30px;
+                outline:none;
+                .dropdown-item {
+                    padding:8px 10px;
+                    &:hover {
+                        background-color: #F2F2F2 !important;
+                    }
+                }
+            }
             &:hover {
                 cursor: pointer;
             }
@@ -315,9 +328,9 @@ a {
                 .page-header {
                     display:flex;
                     flex-direction: column;
-                    padding:10px 20px;
+                    padding:5px 20px;
                     width:100%;
-                    margin-bottom: 20px;
+                    margin-bottom: 5px;
                     font-family: Questrial;
                     h3 {
                         font-size:25px;
@@ -333,10 +346,10 @@ a {
                     display:flex;
                     flex-direction: column;
                     width:100%;
-                    padding:10px 20px;
+                    padding:5px 20px;
                     .form-group {
                         width:100%;
-                        margin:10px 0 20px;
+                        margin:5px 0;
                         display:grid;
                         grid-template-columns: 40px 1fr;
                         align-items: center;
@@ -354,6 +367,7 @@ a {
                             width:40px;
                             height:40px;
                             font-size:16px;
+                            color: rgba(29,104,167,0.6);
                             transition: all 0.3s ease-in-out;
                         }
                         input {
@@ -397,7 +411,7 @@ a {
                     .remember-me {
                         display:flex;
                         align-items: center;
-                        margin:5px 0;
+                        margin:15px 0 5px;
                         input {
                             width:20px;
                             height:20px;
