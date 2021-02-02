@@ -19,7 +19,7 @@
                     </div>
                 </div>
                 <div class="image">
-                    <img src="/img/home.jpg" alt="home-image" />
+                    <img src="/img/home.svg" alt="home-image" />
                 </div>
             </div>
         </div>

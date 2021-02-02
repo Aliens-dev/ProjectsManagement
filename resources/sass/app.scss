@@ -61,10 +61,10 @@ $greyText : #9B9B9B;
             fill:#47D5FE;
         }
         span {
-            font-size:25px;
+            font-size:20px;
             font-weight: 600;
             font-family: sans-serif;
-            margin:0 10px;
+            margin-left: 20px;
             a  {
                 color:#000;
             }
@@ -233,11 +233,17 @@ a {
 
 
 .home-page {
-    padding: 40px 0;
-    background-color:#FFF;
+    padding: 80px 0;
     min-height: calc(100vh - 60px);
     .container {
-        display:flex;
+        display:grid;
+        grid-template-columns: 4fr 6fr;
+        .image {
+            img {
+                width:100%;
+                height:100%;
+            }
+        }
         .desc {
             display:flex;
             flex-direction: column;
@@ -293,7 +299,7 @@ a {
 
 .page {
     padding:50px 0;
-    background-color: #FFF;
+
     .container {
         .page-card {
             display:grid;

@@ -4,7 +4,7 @@
             <img src="{{ asset("/svg/feather.png") }}" alt="feather">
             <span>
             <a href="{{ route('home.index') }}">
-                Project MGM
+                Aliens Projects
             </a>
         </span>
         </div>

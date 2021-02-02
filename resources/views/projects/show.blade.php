@@ -27,7 +27,7 @@
                                             @method('PATCH')
                                             @csrf
                                             <input
-                                                class="d-flex mr-1 ml-1 border-0 flex-grow-1" name="body"
+                                                class="d-flex mr-1 ml-1 border-0 {{ $task->completed ? 'bg-success text-white' : ''}} flex-grow-1" name="body"
                                                 value="{{ $task->body }}"
                                             />
                                             <input class="d-flex mr-1 pl-1 border-0"
