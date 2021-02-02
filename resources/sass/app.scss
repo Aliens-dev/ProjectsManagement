@@ -10,7 +10,11 @@
 
 
 $greyText : #9B9B9B;
-
+*, *::after, *::before {
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
 .my-shadow {
     box-shadow: 2px 1px 3px #EEE, 2px 1px 2px #EEE;
@@ -88,7 +92,10 @@ $greyText : #9B9B9B;
             font-weight: 600;
             margin-left: 10px;
             font-family: Roboto;
-
+            display:block;
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
     .nav-left {
@@ -204,5 +211,37 @@ a {
     text-decoration: none;
     &:hover {
         text-decoration: none;
+    }
+}
+
+
+.home-page {
+    padding: 40px 0;
+    background-color:#FFF;
+    min-height: calc(100vh - 60px);
+    .container {
+        display:flex;
+        .desc {
+            display:flex;
+            flex-direction: column;
+            padding: 10px 20px;
+            h1 {
+                font-weight: 600;
+                font-family: sans-serif;
+                color:#4D4E84;
+                margin: 20px 0;
+                padding: 10px 0;
+                font-size:30px;
+            }
+            p {
+                padding:10px 0;
+                margin: 20px 0 30px;
+                color:#BDBDC7;
+                font-size:18px;
+            }
+        }
+        .controls {
+
+        }
     }
 }

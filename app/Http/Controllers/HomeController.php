@@ -12,13 +12,8 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index($lang)
+    public function index()
     {
-        if($lang !== 'fr' && $lang !== 'en') {
-            app()->setLocale('en');
-            return view('home');
-        }
-        app()->setLocale($lang);
         return view('welcome');
     }
 }
