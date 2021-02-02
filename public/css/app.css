@@ -11249,13 +11249,13 @@ a:hover {
 }
 
 .home-page .container .controls .get-started {
-  background-color: rgba(77, 78, 132, 0.7);
+  background-color: rgba(29, 104, 167, 0.9);
   color: #FFF;
   margin-right: 20px;
 }
 
 .home-page .container .controls .get-started:hover {
-  background-color: #4d4e84;
+  background-color: #1d68a7;
 }
 
 .home-page .container .controls .watch {
@@ -11438,9 +11438,5 @@ a:hover {
   cursor: pointer;
   color: #1d68a7;
   transition: all 0.3s ease-in-out;
-}
-
-input:-internal-autofill-selected {
-  background-color: none;
 }
 

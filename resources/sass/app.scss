@@ -272,11 +272,11 @@ a {
                 }
             }
             .get-started {
-                background-color: rgba(77,78,132, 0.7);;
+                background-color: rgba(29,104,167,0.9);
                 color:#FFF;
                 margin-right: 20px;
                 &:hover {
-                    background-color: rgba(77,78,132, 1);
+                    background-color: rgba(29,104,167,1);
                 }
             }
             .watch {
@@ -434,6 +434,3 @@ a {
     }
 }
 
-input:-internal-autofill-selected {
-    background-color: none;
-}
