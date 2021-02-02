@@ -2,7 +2,7 @@
 
 
 @extends('layouts.app')
-
+    @section('title', 'Aliens Project')
     @section('content')
         <div class="home-page">
             <div class="container">
