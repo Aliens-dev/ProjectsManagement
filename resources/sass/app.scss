@@ -74,6 +74,7 @@ $greyText : #9B9B9B;
         align-self: center;
         display:flex;
         align-items: center;
+        margin-left:40px;
         .profile-img {
             height:40px;
             width:40px;
@@ -101,6 +102,9 @@ $greyText : #9B9B9B;
     .nav-left {
         display:flex;
         justify-self: flex-start;
+    }
+    .nav-link {
+        font-weight:600;
     }
 }
 
@@ -241,7 +245,35 @@ a {
             }
         }
         .controls {
-
+            display:flex;
+            a {
+                text-decoration: none;
+                padding:10px 20px;
+                border-radius: 100px;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                &:hover {
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+            }
+            .get-started {
+                background-color: rgba(77,78,132, 0.7);;
+                color:#FFF;
+                margin-right: 20px;
+                &:hover {
+                    background-color: rgba(77,78,132, 1);
+                }
+            }
+            .watch {
+                background-color: rgba(220,220,220, 0.8);
+                color:rgba(77,78,132, 1);
+                margin-right: 20px;
+                &:hover {
+                    background-color: rgba(220,220,220, 1);
+                }
+            }
         }
     }
 }

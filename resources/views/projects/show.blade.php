@@ -3,11 +3,11 @@
         <div class="project-page">
             <div class="project-info">
                 <div class="nav">
-                    <span>
-                        <span><a href="{{ route('projects.index') }}">My projects</a></span>
-                        /
-                        <span>My Tasks</span>
-                    </span>
+                <span>
+                    <span><a href="{{ route('projects.index') }}">My projects</a></span>
+                    /
+                    <span>My Tasks</span>
+                </span>
 
                     <div>
                         @foreach($project->members as $member)
@@ -27,8 +27,8 @@
                                             @method('PATCH')
                                             @csrf
                                             <input
-                                                    class="d-flex mr-1 ml-1 border-0 flex-grow-1" name="body"
-                                                    value="{{ $task->body }}"
+                                                class="d-flex mr-1 ml-1 border-0 flex-grow-1" name="body"
+                                                value="{{ $task->body }}"
                                             />
                                             <input class="d-flex mr-1 pl-1 border-0"
                                                    name="completed"
@@ -85,7 +85,7 @@
                                     @endforeach
                                 @endif
                             </div>
-                            @endcan
+                        @endcan
                     </div>
                 </div>
             </div>
@@ -98,8 +98,8 @@
                         <div class="activity">
                             @include('projects.activity.'. $activity->description)
                             <span class="text-info">
-                                {{ $activity->created_at->diffForHumans(null,true) }}
-                            </span>
+                            {{ $activity->created_at->diffForHumans(null,true) }}
+                        </span>
                         </div>
                     @endforeach
                 </div>

@@ -11018,6 +11018,7 @@ a.text-dark:focus {
   align-self: center;
   display: flex;
   align-items: center;
+  margin-left: 40px;
 }
 
 .navbar .nav-right .profile-img {
@@ -11050,6 +11051,10 @@ a.text-dark:focus {
 .navbar .nav-left {
   display: flex;
   justify-self: flex-start;
+}
+
+.navbar .nav-link {
+  font-weight: 600;
 }
 
 .projects {
@@ -11207,5 +11212,43 @@ a:hover {
   margin: 20px 0 30px;
   color: #BDBDC7;
   font-size: 18px;
+}
+
+.home-page .container .controls {
+  display: flex;
+}
+
+.home-page .container .controls a {
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-page .container .controls a:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.home-page .container .controls .get-started {
+  background-color: rgba(77, 78, 132, 0.7);
+  color: #FFF;
+  margin-right: 20px;
+}
+
+.home-page .container .controls .get-started:hover {
+  background-color: #4d4e84;
+}
+
+.home-page .container .controls .watch {
+  background-color: rgba(220, 220, 220, 0.8);
+  color: #4d4e84;
+  margin-right: 20px;
+}
+
+.home-page .container .controls .watch:hover {
+  background-color: gainsboro;
 }
 

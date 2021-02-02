@@ -14,7 +14,7 @@
                         A aliquid dignissimos earum rem sequi?
                     </p>
                     <div class="controls">
-                        <a class="get-started">Get Started</a>
+                        <a href="{{ route('login') }}" class="get-started">Get Started</a>
                         <a class="watch">Watch a Video</a>
                     </div>
                 </div>
